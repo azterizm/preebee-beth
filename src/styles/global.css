@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    @apply bg-white text-black;
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 80rem;
+    font-family: GeneralSans-Variable;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: Boska-Bold;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none !important;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+
+  p {
+    @apply leading-relaxed tracking-wide;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    background-color: hsla(55, 100%, 98%, 1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: hsla(55, 100%, 98%, 1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+    background-color: hsla(54, 100%, 20%, 1);
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+
+  .dropdown-content {
+    overflow: auto;
+    max-height: 20rem;
+    flex-flow: column !important;
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px dotted hsla(54, 100%, 20%, 1);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+    margin: 2rem auto;
+    left: 50%;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .htmx-indicator {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    display: none;
+  }
+  .htmx-request .htmx-indicator {
+    opacity: 1;
+  }
+  .htmx-request.htmx-indicator {
+    opacity: 1;
+  }
+}
